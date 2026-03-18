@@ -1,32 +1,41 @@
-# TokenLens
+# tokenlens
 
-> See Every Dollar Your AI Spends
+**See every dollar your AI spends**
 
-## Overview
+![Build](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-proprietary-red)
 
-TokenLens tracks and optimizes LLM API costs across your organization. Monitor token usage by team, project, and model, set budgets, get alerts, and identify optimization opportunities.
-
-## Key Features
-
-- **Real-Time Cost Tracking** — Per-request cost monitoring across all LLM providers
-- **Team/Project Breakdown** — Allocate costs by department, project, or feature
-- **Budget Alerts** — Set spending limits with Slack/email notifications
-- **Model Comparison** — Cost-per-quality analysis across models
-- **Optimization Suggestions** — AI recommends prompt compression and model routing
-- **Usage Analytics** — Token consumption trends and forecasting
-
-## Tech Stack
-
-Python, FastAPI, PostgreSQL, TimescaleDB, React, Recharts
-
-## Getting Started
-
+## Install
 ```bash
-git clone https://github.com/MukundaKatta/tokenlens.git
-cd tokenlens && pip install -e .
-tokenlens track --provider anthropic --api-key $KEY
+npm install
 ```
 
----
+## Quick Start
+```typescript
+import { Tokenlens } from "./tokenlens";
+const instance = new Tokenlens()
+const r = await instance.process({ input: 'test' })
+```
 
-**Mukunda Katta** · [Officethree Technologies](https://github.com/MukundaKatta/Office3) · 2026
+## CLI
+```bash
+npx tsx src/cli.ts status
+npx tsx src/cli.ts run --input "data"
+```
+
+## API
+| Method | Description |
+|--------|-------------|
+| `process()` | Process |
+| `analyze()` | Analyze |
+| `transform()` | Transform |
+| `validate()` | Validate |
+| `export()` | Export |
+| `get_stats()` | Get stats |
+
+## Test
+```bash
+npx vitest
+```
+
+## License
+(c) 2026 Officethree Technologies. All Rights Reserved.
